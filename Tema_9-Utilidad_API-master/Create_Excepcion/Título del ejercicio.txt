@@ -1,0 +1,6 @@
+Ejercicio 1:
+	Crea tu propia clase de EXCEPCION utilizando la palabra clave EXTENDS.
+	Escribe un constructor para dicha clase que tome un argumento String y
+	 	lo almacene dentro del objeto como una referencia de tipo String.
+	Escriba un método que muestre la cadena de caracteres almacenada.
+	Crea una cláusula TRY-CATCH para probar la nueva excepción.

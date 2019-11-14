@@ -1,0 +1,47 @@
+package TareasTema6;
+
+public class Romanos
+{
+	final static RomanValue[] ROMAN_VALUE_TABLE = 
+		{
+				new RomanValue (1000, "M"),
+				new RomanValue ( 900, "CM"),
+				new RomanValue ( 500, "D"),
+				new RomanValue ( 400, "CD"),
+				new RomanValue ( 100, "C"),
+				new RomanValue (  90, "XC"),
+				new RomanValue (  50, "L"),
+				new RomanValue (  40, "XL"),
+				new RomanValue (  10, "X"),
+				new RomanValue (   9, "IX"),
+				new RomanValue (   5, "V"),
+				new RomanValue (   4, "IV"),
+				new RomanValue (   1, "I")
+	    };
+	public static String intoroman(int valor) 
+	{ 
+       StringBuffer result = new StringBuffer(10);
+       for (RomanValue conver : ROMAN_VALUE_TABLE) 
+       {
+        
+            while (valor >= conver.intVal) 
+            {
+                valor -= conver.intVal;            
+                result.append(conver.RomVal);  
+            }
+        }
+        return result.toString();
+    }
+	private static class RomanValue
+{
+        
+        int    intVal;     
+        String RomVal;     
+      
+        RomanValue(int dec, String rom)
+        {
+            this.intVal = dec;
+            this.RomVal = rom;
+        }
+	}
+}

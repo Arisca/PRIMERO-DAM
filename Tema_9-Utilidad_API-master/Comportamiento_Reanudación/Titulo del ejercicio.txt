@@ -1,0 +1,4 @@
+Ejercicio 2:ç
+Define un comportamiento de tipo reanudación utilizando un bucle while que se repita
+hasta que se deje de generar una excepción. Mientras no introduzca el usuario un número entero, debe
+mostrar un mensaje y volver a solicitarlo.
