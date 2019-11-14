@@ -1,0 +1,52 @@
+// Ejercicio: Realiza un programa con tres variables de tipo entero a, b y c. El programa deberá mostrar por pantalla el valor menor y mayor. //
+
+//Importo Scanner desde Java.uti//
+
+import java.util.Scanner;
+public class Mayor_de_tres_variables
+{
+	
+	private static Scanner sc;
+
+	public static void main(String[] args){
+		
+//Métodos de entrada del teclado //
+		
+		sc = new Scanner(System.in);
+		int n1, n2, n3;
+		System.out.print("Introduce el primer número: ");
+		n1=sc.nextInt();
+		System.out.print("Introduce el segundo número: ");
+		n2=sc.nextInt();
+		System.out.print("Introduce el tercer número: ");
+		n3=sc.nextInt();
+
+//Para sacar el número que es mayor //
+		
+		if (n1 > n2){
+		if (n1 > n3){
+			System.out.println("El mayor de los números introducidos es: " +n1);
+			} else {
+			System.out.println("El mayor de los números introducidos es: " +n3);
+			}
+		} else if (n2 > n3){
+			System.out.println("El mayor de los números introducidos es: " +n2);
+			}else{
+				System.out.println("El mayor de los números introducidos es: " +n3);
+		}
+	
+//Para sacar el número que es menor//
+		
+		if (n1 < n2){
+			if (n1 < n3){
+				System.out.println("El menor de los números introducidos es: " +n1);
+				} else {
+				System.out.println("El menor de los números introducidos es: " +n3);
+				}
+			} else if (n2 < n3){
+				System.out.println("El menor de los números introducidos es: " +n2);
+				}else{
+					System.out.println("El menor de los números introducidos es: " +n3);
+			}
+	}
+}

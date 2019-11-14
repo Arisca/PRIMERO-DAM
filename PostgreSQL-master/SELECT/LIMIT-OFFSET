@@ -1,0 +1,35 @@
+SELECT *                                            /* Saca el precio de los dos
+  FROM      articulo                                   articulos más caros */
+  ORDER BY  precio    DESC
+  LIMIT 2;
+__________________________________________
+SELECT cod_pueblo,                                  /* Saca el código de las
+  COUNT (*)                                            3 ciudades con más clientes */
+  FROM  cliente
+  GRUOP BY cod_pro
+  ORDER BY 2 DESC
+  LIMIT 3;
+_________________________________________
+SELECT cod_ven                                       /* El vendedor que haya vendido menos facturas
+  COUNT (*)
+  FROM  factura
+  WHERE cod_ven IS ONT NULL
+  GRUOP BY cod_ven
+  ORDER BY cod_ven
+  ORDER BY 2
+  LIMIT 1;
+_________________________________________
+SELECT num_f                                          /* Sacar las 3 facturas más caras */
+  SUM       (precio*cantidad)
+  FROM      linea_f
+  GRUOP BY  num_f
+  ORDER BY  2 DESC
+  LIMIT 3;
+__________________________________________
+SELECT num_f                                          /* Igual pero exceptuando las 3 facturas más caras */
+  SUM       (precio*cantidad)
+  FROM      linea_f
+  GRUOP BY  num_f
+  ORDER BY  2 DESC
+  OFFSET 3;
+__________________________________________

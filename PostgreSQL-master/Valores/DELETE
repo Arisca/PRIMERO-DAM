@@ -1,0 +1,6 @@
+DELETE FROM factura
+  WHERE num_f=6559;
+_________________________
+  
+DELETE FROM articulo
+  WHERE stockmin IS NULL;

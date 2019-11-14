@@ -1,0 +1,10 @@
+CREATE TABLE vendedor
+(
+    cod_ven       NUMERIC(5,0)      CONSTRAINT cp_ven   PRIMARY KEY,
+    nombre        VARCHAR(100),
+    direccion     VARCHAR(100),
+    cp            NUMERIC(5,0),
+    cod_pueblo    NUMERIC(5,0)      CONSTRAINT ce_ven_pueblo REFERENCES pueblo,
+    cod_cap       NUMERIC(5,0)
+);
+

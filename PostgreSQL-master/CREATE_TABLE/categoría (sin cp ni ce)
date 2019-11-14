@@ -1,0 +1,6 @@
+CREATE TABLE categoria
+(
+    cod_cat       VARCHAR (15),
+    descripcion   VARCHAR (50)
+);
+

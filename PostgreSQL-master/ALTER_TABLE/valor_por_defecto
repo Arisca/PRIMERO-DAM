@@ -1,0 +1,4 @@
+ALTER TABLE tablucha
+      ALTER COLUMN  campucho  DROP DEFAULT;
+      
+      

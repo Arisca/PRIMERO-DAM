@@ -1,0 +1,7 @@
+UPDATE client
+  SET cp=NULL;
+__________________
+
+UPDATE articulo
+  SET precio = precio*1.05
+  WHERE cod_cat ="Pantuflas";

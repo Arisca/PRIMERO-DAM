@@ -1,0 +1,6 @@
+INSERT INTO article
+    VALUES
+    ("x1233x",  "Enanito del Bosque",     4.38, 2.1,    "Pepe"),
+    ("11233V",  "Bosque con Eanito",      3.28, 1.4,    "Juan"),
+    ("z44t16",  "Ni Bosque ni Enanito",   4.65, 5.1,    "Pedro");
+    

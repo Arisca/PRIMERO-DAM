@@ -1,0 +1,126 @@
+SELECT                                                            /* Sacar número máximo de facturas con alias */
+  MAX(cantidad)   AS "Número máximo de facturas"
+  FROM (SELECT COUNT(*)   AS cuantas FROM FACTURA
+  ROUP BY COD_CLI) AS F;
+_____________________________________________________
+SELECT                                                             /* Sacar el importe que supone la factura más cara 
+  MAX(importe)  AS "Importe máximo",                                  y el importe que supone la más barata 
+  MIN(importe)  AS "Importe minimo"                                   (sin considerar ni descuentos ni IVA) */
+    FROM (SELECT SUM(cantidad*precio)   AS importe FROM linea_fac
+    GROUP BY num_f) AS L_F;
+___________________________________________________
+SELECT Trimestre,                                                  /*  Sacar el número de facturas más alto
+    MAX(cantidad)                                                      que se ha vendido por vendedor en cada trimestre
+    FROM(SELECT TO_CHAR(fecha,"Q") AS Trimestre, cod_ven,              la función to_char (fecha, 'Q') , saca el número de trimestre.
+         COUNT (*) AS cuantas                                          El paso previo es calcular el número de facturas de cada vendedor
+    FROM FACTURA                                                       y en cada trimestre.
+    GROUP BY TO_CHAR(fecha,"Q"), (cod_ven) AS F                        Después, con la información anterior,  
+    GROUP BY Trimestre                                                 queremos calcular el máximo de cada trimestre */
+    ORDER BY 1;
+___________________________________________________
+SELECT *                                                          /* Sacar los artículos más caros que la media
+    FROM articulo                                                    ordenados por la categoría, y después por código de artículo */
+    WHERE precio > (SELECT AVG(precio) FROM articulo)
+    ORDER BY cod_cat, cod_a;
+___________________________________________________
+SELECT *                                                          /* Sacar los artículos más caros que la media
+    FROM articulo A1                                                 ordenados por la categoría, y después por código de artículo*/
+    WHERE precio > (SELECT AVG(precio) FROM articulo A2
+                    WHERE a2.cod_cat=a1.cod_cat)
+    ORDER BY cod_cat, cod_a;
+____________________________________________________
+SELECT *                                                          /* Mismo ejemplo que el anterior
+    FROM pueblo                                                      sacar los artículos más caros que la media de su categoría
+    WHERE NOT EXISTS (SELECT * FROM vendedor WHERE                   ordenados por la categoría */
+          pueblo.cod_pueblo=vendedor.cod_pueblo)
+    AND EXISTS (SELECT * FROM cliente WHERE
+          pueblo.cod_pueblo=cliente.cod_pueblo)
+    ORDER BY 1;
+___________________________________________________
+SELECT                                                              /* Sacar los pueblos donde tenemos clientes pero no vendedores
+    pueblo.cod_pob,                                                    Mediante una consulta
+    pueblo.nom,                                                        Ordene por código del pueblo */
+    COUNT (*)
+      FROM pueblo INNER JOIN vendedor USING (cod_pob)
+      GROUP BY pueblo.cod_pob, pueblo.nom
+      HAVING COUNT  (*) > (SELECT COUNT (*) FROM cliente WHERE
+        pueblo.cod_pueblo=cliente.cod_pueblo)
+      ORDER BY 2;
+__________________________________________________
+SELECT                                                                /* Sacar el importe de la factura más cara
+    Trimestre,                                                           del trimestre */
+    MAX(importe)                                                         
+    FROM (SELECT num_f, TO_CHAR(fecha,'Q') AS Trimestre,                 
+          SUM(cantidad*precio) AS import
+    FROM linea_factura INNER JOIN factura USING (num_f)
+          GROUP BY num_f, Trimestre) AS LF
+    GROUP BY Trimestre
+ORDER BY 1;
+____________________________________________________
+SELECT                                                                /* Sacar el nombre del vendedor, el numero de facturas                                                       
+    nombre,                                                              y el porcentaje que supone el total */
+    COUNT(*),
+      ROUND(COUNT(*)/(SELECT count(*) FROM factura)::NUMERIC*100,2)
+      FROM vendedor INNER JOIN factura USING (cod_ven)
+      GROUP BY nom
+      ORDER BY 1;
+______________________________________________________
+SELECT num_f, data, import
+FROM FACTURA
+INNER JOIN (SELECT num_f, SUM(quant*preu) AS import
+ FROM LINIA_FAC GROUP BY num_f) AS LF1 USING(num_f)
+WHERE import=(SELECT MAX(import)
+ FROM (SELECT num_f, SUM(quant*preu) AS import
+ FROM LINIA_FAC GROUP BY num_f) AS LF2);
+ ______________________________________________________
+ SELECT cod_cat,VENEDOR.cod_ven, nom,SUM(quant) AS "Unitats Venudes"
+FROM VENEDOR,FACTURA,LINIA_FAC,ARTICLE A
+WHERE VENEDOR.cod_ven=FACTURA.cod_ven AND
+FACTURA.num_f=LINIA_FAC.num_f
+ AND LINIA_FAC.cod_a=A.cod_a AND cod_cat IS NOT NULL
+GROUP BY cod_cat,VENEDOR.cod_ven, nom
+HAVING SUM(quant) >= ALL (SELECT SUM(quant)
+ FROM FACTURA,LINIA_FAC,ARTICLE
+ WHERE FACTURA.num_f=LINIA_FAC.num_f
+ AND LINIA_FAC.cod_a=ARTICLE.cod_a
+ AND cod_cat=A.cod_cat
+ GROUP BY cod_ven)
+ORDER BY cod_cat;
+_________________________________________________________
+SELECT nom, 'Venedor'
+ FROM VENEDOR
+ WHERE cod_ven IN (SELECT cod_ven FROM FACTURA WHERE
+TO_CHAR(data,'Q-YY')='1-15')
+UNION
+SELECT nom, 'Client'
+ FROM CLIENT
+ WHERE cod_cli IN (SELECT cod_cli FROM FACTURA WHERE TO_CHAR(data,'QYY')='1-15')
+ORDER BY 1;
+________________________________________________________
+SELECT nom
+ FROM POBLE
+ WHERE cod_pob IN (SELECT cod_pob FROM VENEDOR)
+UNION
+SELECT nom
+ FROM POBLE
+ WHERE cod_pob IN (SELECT cod_pob FROM CLIENT)
+ORDER BY 1;
+_________________________________________________________
+SELECT nom
+ FROM POBLE
+ WHERE cod_pob IN (SELECT cod_pob FROM VENEDOR)
+INTERSECT
+SELECT nom
+ FROM POBLE
+ WHERE cod_p
+ _________________________________________________________
+ SELECT nom
+ FROM POBLE
+ WHERE cod_pob IN (SELECT cod_pob FROM VENEDOR)
+EXCEPT
+SELECT nom
+ FROM POBLE
+ WHERE cod_pob IN (SELECT cod_pob FROM CLIENT)
+ORDER BY 1;
+ 
+

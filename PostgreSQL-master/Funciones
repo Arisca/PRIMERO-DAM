@@ -1,0 +1,41 @@
+________________________________________________________________________________________
+         FUNCION QUE SACA LOS NUMEROS DEL 1 AL 10 Y SUS CUADRADOS (USANDO RAISE NOTE)
+________________________________________________________________________________________
+
+
+CREATE OR REPLACE FUNCTION  DEU_Q() RETURNS void AS
+$CUERPO$
+BEGIN
+	FOR y IN 1..10 LOOP
+		RAISE NOTICE 'Numero:%. Doble:%', y, y ^ 2;
+	END LOOP;
+END;
+$CUERPO$
+LANGUAGE 'plpgsql';
+
+
+SELECT  DEU_Q();
+
+_________________________________________________________________________________________
+        FUNCION DE TABLA DE MULTIPLICAR (USANDO RAISE NOTE)
+_________________________________________________________________________________________
+
+CREATE OR REPLACE FUNCTION TAULA_MULT (x int) 
+
+    returns INT as $$
+    
+BEGIN
+	RAISE NOTICE 'TABLA DE MULTIPLICAR DEL %', x;
+	RAISE NOTICE '==========================';
+	FOR y IN 1..10 LOOP
+	
+	RAISE NOTICE '% X %  = %' , x, y, (x * y);
+	END LOOP;
+	
+ END;
+ $$
+LANGUAGE plpgsql;
+
+SELECT TAULA_MULT (2);
+
+

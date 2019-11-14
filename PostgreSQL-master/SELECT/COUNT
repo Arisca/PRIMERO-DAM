@@ -1,0 +1,73 @@
+SELECT
+  COUNT (*) FROM cliente WHERE cp IS NULL;
+_______________________________________
+SELECT
+  COUNT   (*)
+  SUM     (cantidad) FROM linea_fac
+  WHERE   cod_a = "123az";
+_________________________________________
+SELECT
+  COUNT   (*)   FROM factura
+  WHERE   cod_cli = 375;
+_________________________________________
+_________________________________________
+SELECT cod_pro,
+    COUNT     (*)  
+    FROM      pueblo,
+    GRUOP BY  cod_pro;
+________________________________________
+SELECT cod_pueblo, cp,
+    COUNT     (*)
+    FROM      cliente,
+    GROUP BY  cod_pro, cp;
+__________________________________________
+ SELECT cod_pueblo, cp,
+    COUNT     (*) 
+    FROM      factura
+    GRUOP BY  cod_ven, cod_cli;
+ _________________________________________
+ _________________________________________
+ SELECT cod_a,
+    COUNT (*)
+    SUM   (cantidad),
+    MAX   (cantidad),
+    MIN   (cantidad)
+    FROM  linea_factura;
+ ______________________________________
+  SELECT cod_cat,
+    COUNT   (*)
+    AVG     (precio)
+    FROM    articulo
+    GRUOP   BY cod_cat;
+  _______________________________________
+  SELECT num_f,
+    SUM   (precio*cantidad)
+    FROM  linea_factura
+    GROUOP BY num_f;
+  _______________________________________
+  _______________________________________
+  SELECT TO_CHAR (DATA, "Q")
+     COUNT  (*)
+     FROM   factura;
+  
+  /*  Q   .- Trimestre
+      CC  .- Siglo
+      W   .- Semana del mes
+      WW  .- Semana del año
+      CC  .- Siglo
+      D   .- Día de la semana
+      DD  .- Dia del mes
+      DDD .- Día del año
+      
+      (DAY en letras da resultado en letra)
+  */
+  _____________________________________________
+  
+  
+  
+  
+  
+  
+  
+  
+  

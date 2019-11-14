@@ -1,0 +1,26 @@
+package Utilidades.mates;
+
+import java.io.*;
+import Utilidades.mates.*;
+
+public class mates
+{
+  public static void main(String[] args) throws NumberFormatException, IOException
+  {
+      InputStreamReader isr = new InputStreamReader(System.in);
+      BufferedReader buff = new BufferedReader(isr);
+      
+      System.out.println("Introduzca la base :");
+      int base = Integer.parseInt(buff.readLine());
+
+      System.out.println("Introduzca el exponente :");
+      int exponente = Integer.parseInt(buff.readLine());
+      
+      sumar suma1 = new sumar();
+      System.out.print(base+ " + " + exponente + " = ");
+      System.out.println(suma1.suma(base, exponente ));
+      potenciar potencia1 = new potenciar( );
+      System.out.print(base+ " ^ " + exponente + " = ");
+      System.out.println(potencia1.potencia(base, exponente ));
+}
+}

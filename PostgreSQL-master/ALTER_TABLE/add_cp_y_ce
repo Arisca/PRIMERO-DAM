@@ -1,0 +1,3 @@
+ALTER TABLE articulo
+    ADD COSNTRAINT cp_art     PRIMARY KEY (cod_a),
+    ADD CONSTRAINT ce_art_cat FOREIGN KEY (cod_cat) REFERENCES categoria;

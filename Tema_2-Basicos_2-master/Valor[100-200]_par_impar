@@ -1,0 +1,26 @@
+ programa que saque un valor entre el rango [100-200] y muestre por pantalla si el valor es par o impar. */
+
+import java.util.*;
+public class Valor[100-200]_par_impar
+{
+	public static void main (String [] args)
+  {
+		Random rnd = new Random ();
+		
+// Determinando el Rango entre [100-200]
+		
+		int valor = (rnd.nextInt (100)+100);
+		System.out.println(valor);
+		
+// Determinando si los números son pares o impares
+		
+		if (valor %2 == 0)
+    {
+				System.out.println("El valor es par");
+				}
+        else
+        {
+				System.out.println("El valor es impar");
+		}
+	}
+}

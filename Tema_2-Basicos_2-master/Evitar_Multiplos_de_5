@@ -1,0 +1,26 @@
+/* Ejercicio: Realiza un programa que muestre en pantalla los números del 1 al 100 sin
+mostrar aquellos números múltiplos de 5 */
+
+
+public class Multiplos5
+{
+
+	public static void main(String[] args)
+  {
+		
+		System.out.println("Números del 1 al 100 exceptuando los múltiplos de 5");
+
+		for (int n=1; n<=100; n++)
+					
+			if (n%5 == 0)
+      {
+				}
+        else
+        {
+				System.out.print("  " + n + "  ");
+				}
+	}
+
+}
+
+

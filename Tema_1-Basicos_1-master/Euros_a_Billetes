@@ -1,0 +1,53 @@
+public class Euros_a_Billetes
+{
+	public static void main(String [] args)
+	{
+		  int billete=2478;
+		  int quedaImporte;
+      
+		        System.out.println("Euros a descomponer "+ billete);
+          	quedaImporte=(billete%500>=0)? billete/500 : 0;
+     
+		if(quedaImporte>0)
+		        System.out.println("Billetes de 500: "+billete/500);
+            billete=billete%500;
+		        quedaImporte=(billete%200>=0)? billete/200 : 0;
+            
+		if(quedaImporte>0)
+		        System.out.println("Billetes de 200: "+billete/200);
+	        	billete=billete%200;
+		        quedaImporte=(billete%100>=0)? billete/100 : 0;
+            
+		if(quedaImporte>0)
+    	      System.out.println("Billetes de 100: "+billete/100);
+		        billete=billete%100;
+		        quedaImporte=(billete%50>=0)? billete/50 : 0;
+            
+		if(quedaImporte>0)
+		        System.out.println("Billetes de 50: "+billete/50);
+		        billete=billete%50;
+	        	quedaImporte=(billete%20>=0)? billete/20 : 0;
+            
+		if(quedaImporte>0)
+			      System.out.println("Billetes de 20: "+billete/20);
+			      billete=billete%20;
+			      quedaImporte=(billete%10>=0)? billete/10 : 0;
+            
+	  if(quedaImporte>0)
+			    System.out.println("Billetes de 10: "+billete/10);
+			    billete=billete%10;
+			    quedaImporte=(billete%5>=0)? billete/5 : 0;
+          
+		if(quedaImporte>0)
+			    System.out.println("Billetes de 5: "+billete/5);
+			    billete=billete%5;
+			    quedaImporte=(billete%2>=0)? billete/2 : 0;
+          
+		if(quedaImporte>0)
+			    System.out.println("Monedas de 2: "+billete/2);
+			    billete=billete%2;
+          
+		if(quedaImporte>0)
+			    System.out.println("Monedas de 1: "+billete);
+		}
+}

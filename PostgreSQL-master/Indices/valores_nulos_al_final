@@ -1,0 +1,6 @@
+CREATE INDEX i_datos_nuevo  
+    ON empleado
+    (
+      fecha_naci  DESC  nula  LAST,
+      sueldo            nula  LAST+
+     );

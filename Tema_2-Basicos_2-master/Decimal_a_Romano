@@ -1,0 +1,86 @@
+/* Ejercicio: Realiza un programa que transforme números en formato decimal a números en
+formato romano (hasta el número 3999 como máximo). */
+
+import java.util.Scanner;
+
+public class NúmerosRomanos
+{
+
+	public static void main(String[] args) {
+
+// Añado entrada por teclado para la introducción de los números
+			
+			int num;
+			String rom = " ";
+		
+			Scanner sc= new Scanner(System.in);
+			
+			System.out.print("Introduce el número a transformar del 1 al 3999: ");
+			num =sc.nextInt();
+			
+			while (num < 1 || num > 3999 );
+										
+// Sentencia de los números romanos
+	
+			int uni = num % 10 ;
+			int dec = num / 10 %10 ;
+			int cent = num / 100 % 10;
+			int mil = num / 1000;
+			
+			// Cuando pidan millares
+			for (num = 1; num <= mil; num++) {
+	             rom = rom + "M";
+			}
+			
+			// Cuando pidan centenas
+			if (cent == 9) {
+		          rom = rom + "CM";
+		    } else if (cent >= 5) {
+		          rom = rom + "D";
+		    for (num = 6; num <= cent; num++) {
+		          rom = rom + "C";}
+		    } else if (cent == 4) {
+		          rom = rom + "CD";
+		    } else {
+		    for (num = 1; num <= cent; num++) {
+		          rom = rom + "C";}
+		    }
+			
+			// Cuando pidan decenas
+			
+			if (dec == 9) {
+		        rom = rom + "XC";
+		    } else if (dec >= 5) {
+		        rom = rom + "L";
+		    for (num = 6; num <= dec; num++) {
+		        rom = rom + "X";}
+		    } else if (dec == 4) {
+		        rom = rom + "XL";
+		    } else {
+		    for (num = 1; num <= dec; num++) {
+		       rom = rom + "X";}
+		    }
+			
+			// Cuando pidan unidades
+			
+			if (uni == 9) {
+				rom = rom + "IX";
+			} else if (uni >= 5) {
+				rom = rom + "V";
+			for (num = 6; num <= uni; num++) {
+				rom = rom + "I";}
+			} else if (uni == 4) {
+				rom = rom + "IV";
+			} else {
+			for (num = 1; num <= uni; num++) {
+				rom = rom + "I";}
+			}
+			
+// Impresión por pantalla del resultado
+
+  System.out.println("En numeros romanos es: " +rom);		
+		
+	}
+}
+
+	

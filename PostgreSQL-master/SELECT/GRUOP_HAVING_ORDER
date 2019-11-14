@@ -1,0 +1,72 @@
+SELECT cod_a,                                             /*  Calcular media de cantidades de los articulos
+  COUNT     (*),                                              que se han pedido más de 2 veces
+  AVG       (cantidad)                                        agrupándolos por codigo */
+  FROM      linea_factura
+  GRUOP BY  cod_a
+  HAVING    count(*) > 2;
+______________________________________
+SELECT cod_pro,                                           /*  Sacar los pueblos que tienen
+  COUNT   (*)                                                 entre 3 y 7 clientes,
+  FROM    cliente                                             Enseñando solo el cod_pro y este numero */
+  GRUOP   BY cod_pro
+  HAVING  count (*)   BETWEEN 3 AND 7;
+_______________________________________
+SELECT cod_cat,                                            /*  Sacar las categorías con más de un artículo
+  COUNT     (*)                                                con precio mayor de 100€ */
+  FROM      articulo
+  WHERE     precio > 100
+  GRUOP     BY cod_cat
+  HAVING    COUNT (*) > 1;
+_______________________________________
+SELECT cod_cli,                                              /*  Sacar los clientes que tienen mas de una factura
+  COUNT     (*)                                                 con el número de facturas */
+  FROM      factura
+  GRUOP BY  cod_cli
+  HAVING    COUNT (*) > 1;
+______________________________________
+SELECT cod_cli,                                               /* Sacar los clientes con más de una factura
+  COUNT     (*)                                                  en el primer trimestre */
+  FROM      factura
+  WHERE     TO_CHAR  (DATA, "Q") = "1"
+  GRUOP BY  cod_cli
+  HAVING    COUNT (*) > 1;
+_______________________________________
+SELECT num_f                                                  /* Calcular de aquellas que tengan más
+  SUM       (precio*cantidad)                                    de 10 líneas de factura */
+  SUM       (precio*cantidad*(1-COALESECE(dto,0)/100)))
+  FROM      linea_fac
+  GROUP BY  num_f
+  HAVING    COUNT (*) >= 10;
+______________________________________
+ SELECT (*)                                                   /*  Sacar todo, ordenado por
+  FROM      cliente                                               cod_pro y cp (Ascendente = default)*/
+  ORDER BY  cod_pro, cp;
+________________________________________
+SELECT (*)                                                   /*  Sacar todo, ordenado por
+  FROM      articulo                                             cod_cat, stock (ASC) y precio (DESC) */
+  ORDER BY  cod_cat, stock, precio DESC;
+_________________________________________
+SELECT num_f,                                                 /* Sacar todos los resultados
+  SUM       (precio*cantidad)                                    ordenados y de forma DESC */
+  SUM       (precio*cantidad*(1-(COALESCE(dto,0)/100)))
+  FROM      linea_fac
+  GRUOP BY  num_f
+  AVING     count (*) >= 10
+  ORDER BY  3 DESC;
+_________________________________________
+SELECT *                                                       /* Sacar los articulos ordenados por
+  FROM  articulo                                                  la diferencia  calculada y que los nulos
+  ORDER BY COALESCE (stock, 0)- COALESCE(stock_min,0) DESC;       sean 0*/
+__________________________________________
+SELECT cod_ven,                                                 /* Sacar los códigos con el numero
+  COUNT    (*)                                                     de facturas vendidas en el 2ª T
+  FROM     factura                                                 y ordenados por este número */
+  WHERE    fecha BETWEEN "2015/07/01" AND "2015/12/31"
+  GRUOP    BY  cod_ven
+  ORDER BY 2 DESC;
+_____________________________________________
+
+
+
+
+

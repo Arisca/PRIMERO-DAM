@@ -1,0 +1,10 @@
+CREATE TABLE factura
+(
+    num_f       NUMERIC(5,0)      COSTRAINT cp_fac PRIMARY KEY,
+    data        DATE,
+    cod_cli     NUMERIC(5,0)      CONSTRAINT ce_fac_cli REFERENCES cliente NOT NULL,
+    cod_ven     NUMERIC(5,0)      CONSTRAINT ce_fac_ven REFERENCES vendedor,
+    iva         NUMERIC(2,0),
+    dte         NUMERIC(2,0)
+);
+

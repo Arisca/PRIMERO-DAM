@@ -1,0 +1,13 @@
+CREATE TABLE linea_fac
+(
+    num_f     NUMERIC(5,0),
+    num_l     NUMERIC(3,0),
+    cod_a     VARCHAR(10) NOT NULL,
+    cantidad  NUMERIC(50),
+    precio    NUMERIC(6,2),
+    dte       NUMERIC(2,0)
+    
+        CONSTRAINT cp_lin PRIMARY KEY (num_f, num_l)
+ );
+ 
+ 

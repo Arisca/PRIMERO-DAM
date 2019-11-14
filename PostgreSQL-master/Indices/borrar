@@ -1,0 +1,1 @@
+DROP INDEX i_nombre_indice  ON tabla;

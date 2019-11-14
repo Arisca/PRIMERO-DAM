@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class EmpleadoFabrica
+{
+	private Scanner teclado;
+	String nombre;
+	float sueldo;
+	
+ public EmpleadoFabrica()
+ {
+	 teclado = new Scanner(System.in);
+	 System.out.println("Introducir nombre empleado:");
+	 nombre = teclado.next();
+	 System.out.println("Introducir sueldo empleado:");
+	 sueldo = teclado.nextFloat();
+ }
+ 
+ public void pagaImpuestos()
+ {
+	 if (sueldo>3000)
+		 System.out.println("Debe pagar impuestos");
+	 else
+		 System.out.println("No paga impuestos");
+ }
+ 
+ 	public static void main (String[] args)
+ 	{
+	 EmpleadoFabrica empleado1;
+	 empleado1 = new EmpleadoFabrica();
+	 empleado1.pagaImpuestos();
+ 	}
+}

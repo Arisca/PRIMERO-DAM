@@ -1,0 +1,7 @@
+CREATE INDEX i_nom_cli  
+    ON cliente (nombre); /* Default = ascendente */
+    
+ _______________
+ 
+ CREATE INDEX i_direc_ven
+    ON vendedor (cp, direccion DESC); /* Especificando DESCendiente*/

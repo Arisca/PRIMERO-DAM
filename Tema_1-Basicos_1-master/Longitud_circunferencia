@@ -1,0 +1,9 @@
+class Longitud_circunferencia
+{
+      public static void main(String [] args)
+      {
+        int radio=3;
+        final double PI=3.141592;
+        System.out.println(2*PI*radio);
+      }
+}

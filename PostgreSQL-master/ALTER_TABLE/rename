@@ -1,0 +1,6 @@
+ALTER TABLE tabla
+    RENAME COLUMN   campo   TO  campito;
+_________________
+
+ALTER TABLE tabla
+    RENAME  TO tablita;

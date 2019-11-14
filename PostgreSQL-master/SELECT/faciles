@@ -1,0 +1,11 @@
+SELECT * FROM pueblo
+
+_______________________
+
+
+SELECT cp_nom, direccion FROM vendedor;
+
+_______________________
+
+SELECT cod_a, descripcion, precio, precio*1.05 FROM articulo
+

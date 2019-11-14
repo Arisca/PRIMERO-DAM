@@ -1,0 +1,24 @@
+SELECT                                                            /*  Sacar los vendedores que han vendido
+  DISTINCT  cod_ven                                                     algo el mes de Enero */
+  FROM      factura                                                    
+  WHERE     fecha BETWEEN "2015/01/01" AND "2015/01/31";
+__________________________________________________
+SELECT                                                             /* Sacar los diferentes tipos de IVA
+  DISTINCT  cod_ven, iva                                               en esas fechas */
+  FROM      factura
+  WHERE     fecha BETWEEN "2015/01/01" AND "2015/01/31";
+_________________________________________________
+SELECT                                                             /* Saca los vendedores evitando valores nulos */
+  DISTINCT  cod_cap
+  FROM      vendedor
+  WHERE     cod_cap IS NOT NULL;
+___________________________________________________
+SELECT                                                              /* Saca los descuentos y el código
+  DISTINCT  cod_a, dto                                                 de todos aquellos productos
+  FROM      linea_fac                                                  que comiencen por SAT */
+  WHERE     cod_a LIKE "SAT%"
+ ________________________________________________
+SELECT                                                              /*Contar las poblaciones
+  COUNT   (DISTINCT cod_pro)
+  FROM    cliente;
+_______________________________________________

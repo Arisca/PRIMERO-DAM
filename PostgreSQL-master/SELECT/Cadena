@@ -1,0 +1,1 @@
+SELECT INITCAP(nombre) || "." || dirección || "(" || cp || ")" || FROM cliente;

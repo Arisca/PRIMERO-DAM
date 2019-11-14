@@ -1,0 +1,60 @@
+/** Ejercicio2: Realiza un programa utilizando bucles que muestre la siguiente figura por pantalla
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *  **/
+
+public class Diamante_Bucle
+{
+
+  public static void main(String[] args)
+  {
+
+		int i = 0;
+		bucleext:
+
+// Primera parte del rombo 
+			
+		while (i < 7)
+    {
+			i ++;
+			for (int k=1; k<(10-i); k+=2)
+      {
+				if ( i%2 == 0) {continue bucleext; };
+				System.out.print(" ");
+			}
+		for (int j=0; j<i; j++)
+    {
+				System.out.print("*");
+		}
+		System.out.println("");
+		
+		}
+	
+// Segunda parte del rombo 
+	
+		int a = 0;
+		bucleext:
+		while (a < 7)
+    {
+			a ++;
+			for (int k=1; k<(4+a); k+=2)
+      {
+				if ( a%2 == 0) {continue bucleext; };
+				System.out.print(" ");
+			}
+		for (int j=6; j>a; j--)
+    {
+					System.out.print("*");
+		}
+		System.out.println("");
+		if (a == 7) {break bucleext;};
+		
+		
+		}
+	}	
+	
+}

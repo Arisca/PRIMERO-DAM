@@ -1,0 +1,14 @@
+CREATE TABLE empleado
+(
+    dni             VARCHAR(15)     CONSTRAINT cp_emp     PRIMARY KEY,
+    nombre          VARCHAR(50)     CONSTRAINT nn_nombre  NOT NULL,
+    fecha_naci      DATE,           
+    sueldo          NUMERIC(6,2)    CONSTRAINT positivo   CHECK (sueldo > 0),
+    departamento    INT2            CONSTRAINT ce_emp_dep REFERENCES departamento ON DELENTE CASCADE / ON UPDATE CASCADE,
+    poblacion       VARCHAR(50),    DEFAULT "Castellón",
+    fecha_in        DATE            DEFAULT CURRENT_DATE,
+    
+          CONSTRAINT u_nomb UNIQUE (nombre),
+          CONSTRAINT check_dates    CHECK (EXTRACT (year FROM AGE (fecha_in, fecha_naci)) >= 18 )
+);
+     

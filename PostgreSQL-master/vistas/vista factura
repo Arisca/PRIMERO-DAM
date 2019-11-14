@@ -1,0 +1,20 @@
+CREATE VIEW resum_factura
+  AS
+    SELECT num_f, factura.data, factura.cod_cli, SUM (precio*cantidad)  AS import,
+    SUM (precio*cantidad)*1-(COALESCE(linea_fac.dte,0)/100)))           AS descuento_1,
+    SUM (precio*cantidad*(1-COALESCE(linea_fac.dte,0)/100))*
+        (1-(COALESCE(factura.dte,0)/100)))                              AS descuento_2
+    FROM linea_fac  INNER JOIN factura USING (num_f)
+    GRUOP BY num_f, factura.data, factura.cod_cli,
+    ORDER BY 1;
+    
+    
+/* Que devuelva...:
+      - El total del dinero de la factura,
+      - El total despues del descuento de artículos,
+      - El total espues del descuento de la factura,
+      
+      COALESCE    .-  Evita que se muestren los valores nulos
+      INNER JOIN  .-  Utilizado para campos con el mismo nombre
+ */
+ 

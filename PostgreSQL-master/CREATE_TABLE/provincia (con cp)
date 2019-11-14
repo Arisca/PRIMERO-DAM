@@ -1,0 +1,6 @@
+CREATE TABLE provincia
+(
+    cod_pro       NUMERIC(2,0)    CONSTRAINT cp_pro PRIMARY KEY,
+    nombre        VARCHAR(50)
+);
+

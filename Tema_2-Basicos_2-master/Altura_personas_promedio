@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Altura_personas_promedio
+{
+    private static Scanner teclado;
+
+    public static void main (String[] args)
+    {
+        teclado = new Scanner(System.in);
+        int n;
+        int x;
+        float altura;
+        float suma;
+        float promedio;
+        
+        System.out.println ("Cuantas personas hay?: ");
+        n=teclado.nextInt();
+        x=1;
+        suma=0;
+        
+        while (x<=n)
+        {
+             System.out.println("Introduce una altura: ");
+            altura=teclado.nextFloat();
+            suma=suma+altura;
+            x=x+1;
+        }
+        
+        promedio=suma/n;
+        System.out.println("Altura promedio: "+promedio);
+    }
+} 
+

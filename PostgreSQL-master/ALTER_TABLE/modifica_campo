@@ -1,0 +1,9 @@
+ ALTER TABLE empleado
+      ALTER COLUMN poblacion TYPE VARCHAR(25)
+_______________________________
+SI NO COMPATIBLES...
+
+ALTER TABLE tabla
+      ALTER COLUMN  campo TYPE INTEGER USING (campo::INTEGER);
+      
+      

@@ -1,0 +1,42 @@
+/* Ejercicio: Realiza un programa que muestre por pantalla las tablas de multiplicar del 1 al
+10. */
+
+public class Tablasmultiplicar
+{
+
+	private static final String format = null;
+
+	public static void main(String[] args)
+  {
+
+// Titulo del ejercicio
+		
+		System.out.println("\t\t\t\t\t\t\tLas tablas de multiplicar del 1 al 10");
+		
+		System.out.println("");
+		
+// Enunciado de cada tabla	
+		
+				for (int t=1; t<=10; t++) 
+					System.out.print("Tabla del "+t+ "\t");
+					System.out.print("\n");
+
+// secuencia de asteriscos
+					
+					for (int t=1; t<=10; t++) 
+						System.out.print("************ \t");
+						System.out.print("\n");
+					
+// Las tablas de multiplicar
+					
+				for (int m = 1; m<=10; m++)
+        {
+					for (int n = 1; n <=10; n++) 
+					{
+					 
+						System.out.print(   +n+ " X " +m+ " = " +m*n+ "\t");}
+						System.out.println("");
+						
+					}
+	}
+}

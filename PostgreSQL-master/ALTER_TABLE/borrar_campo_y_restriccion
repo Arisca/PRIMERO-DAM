@@ -1,0 +1,5 @@
+ALTER TABLE tabla
+    DROP COLUMN     campo,
+    DROP CONSTRAINT ce_camp;
+    
+    

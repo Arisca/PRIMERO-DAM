@@ -1,0 +1,13 @@
+CREATE OR REPLACE VIEW estadistica
+  AS
+     SELECT   nombre, cantidad (nombre) AS num_p;
+         SUM      poblacion,
+         AVG      (altura)                  AS altura_media,
+     FROM poblaciones
+     GROUP BY nombre_c,
+     ORDER BY nombre_c;
+     
+ /* Vista de las comarcas; el numero de poblaciones de cada una y el total de habitantes
+    con su altura media
+ */
+ 

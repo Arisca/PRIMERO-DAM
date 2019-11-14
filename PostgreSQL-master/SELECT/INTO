@@ -1,0 +1,9 @@
+SELECT                                                        /* Creat tabla copia de articulo
+  cod_a,                                                         sin valores NULL*/
+  descripcion,
+  precio,
+  COALESCE  (stock,0)     AS stock,
+  COALESCE  (stock_min,0) AS stock_min, cod_cat
+  INTO      articulo_999x
+  FROM      articulo
+  ORDER BY  cod_a;

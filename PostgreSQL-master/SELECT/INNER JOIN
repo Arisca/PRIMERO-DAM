@@ -1,0 +1,140 @@
+SELECT                                                    /*  Sacar el nombre de los clientes
+  client.nombre,                                              con el num_f y la fecha
+  factura.numero_f,                                           
+  factura.fecha
+          FROM        cliente
+          INNER JOIN  factura USING (cod_cli)              /* El cod_cli existe tanto en cliente como en factura */
+          ORDER BY 3;
+___________________________________________________
+SELECT                                                     /* Sacar estos campos ordenados por ese orden */
+  client.nombre,
+  linea_fac.cod_a,
+  articulo.descripcion
+          FROM  cliente
+          INNER JOIN  factura   USING (cod_cli)             
+          INNER JOIN  linea_fac USING (num_f)
+          INNER JOIN  articulo  USING (cod_a)
+          ORDER BY 1,2;                                     /* nombre y cod_a */
+____________________________________________________
+SELECT                                                      /* Mismo pero sin repetir resultados */
+   DISTINCT
+      cliente.nombre,
+      linea_fac.cod_a,
+      articulo.descripcion
+          FROM cliente
+          INNER JOIN  factura   USING (cod_cli)
+          INNER JOIN  linea_fac USING (num_f)
+          INNER JOIN  articulo  USING (cod_a)
+          ORDER BY 1,2;
+______________________________________________________
+SELECT                                                          /* Sacar el nombre con la cantidad
+    cliente.nombre,                                                de facturas que tienen 
+          COUNT (factura.num_f)                                    agrupando y ordenando */
+          FROM  factura
+          INNER JOIN  factura   USING (cod_cli)
+          GRUOP BY cliente.nombre
+          ORDER BY 2 DESC
+________________________________________________________
+SELECT                                                            /* Sacar ordenado y agrupado
+    num_f,                                                           con cálculo de precio sin desc*/
+    factura.fecha,
+    factura.cod_cli,
+        SUM (precio*cantidad),
+        SUM (precio(cantidad(1-(COALESCE(linea_f.dto,0)/100)))
+        FROM        linea_fac
+        INNER JOIN  factura   USING (num_f)
+        GRUOP BY    num_f, factura.fecha, factura.cod_cli
+        ORDER BY 1;
+_______________________________________________________
+SELECT                                                                    /* Sacar el numero esos datos con alias                                                              
+    num_f,                                                                   y el total de la factura, con descuentos,
+    factura.fecha,                                                           y ordenar por numero de factura */
+    factura.cod_cli, 
+        SUM   (precio*cantidad)                     AS    importe,
+        SUM   (precio*catidad*(1-
+              (COALESCE(LINIA_FAC.dte,0)/100)))     AS    descuento_1,
+        SUM   (precio*cantidad*
+              (1-(COALESCE(LINIA_FAC.dte,0)/100))
+              *(1-(COALESCE(FACTURA.dte,0)/100)))   AS descuento_2,
+        FROM linea_fac
+              INNER JOIN factura USING (num_f)
+        GROUP BY num_f, factura.fecha, factura.cod_cli
+        ORDER BY 1;
+__________________________________________________________
+SELECT                                                                      /* Sacar codigo y nombre de los supervisores
+    supervisor.cod_ven,                                                        y sacar tambien el número de supervisados
+    supervisor.nom,                                                            de cada uno de estos supervisores */
+    COUNT(vendedor.*)
+    FROM  vendedor supervisor INNER JOIN vendedor
+          ON  supervisor.cod_ven = vendedor.cod_cap
+    GROUP BY supervidor.cod_ven, supervidsor.nom
+    ORDER BY 1;
+___________________________________________________________
+SELECT                                                                       /* Sacar cóldigo y descripción
+    linea_fac.cod_a,                                                            de los artículos junto con el numero
+    articulo.descrip,                                                           de veces que se ha vendido
+        COUNT (*),                                                              el total de unidades vendidas
+        SUM   (cantidad),                                                       la media de unidades vendidas por factura
+        AVG   (cantidad)                                                        y ordear por número total de unidades vendidas
+            FROM linea_fac                                                      DESC y dentro de ésta por cód de artículo
+            INNER JOIN articulo USING  (cod_a)                                  de forma ASC */
+            GROUP BY linea_fac.cod_a, articulo.descrip
+            ORDER BY 4 DESC, 1;
+___________________________________________________________
+SELECT                                                                        /* Sacar el código y la descripción de las categorías
+    categoria.cod_cat,                                                           con la cantidad de artículos vendidos de cada categoría,
+    categoria.descripcio,                                                        de aquellas categorías de las que se han vendido
+        SUM(cantidad)                                                            más de 100 unidades
+        FROM  categoria INNER JOIN articulo USING (cod_cat)                      y Ordenar por este número de forma descendente */
+        INNER JOIN linea_fac USING(cod_a)
+        GROUP BY categoria.cod_cat, categoria.descripcio
+        HAVING  SUM(cantidad) >100
+        ORDER BY 3 DESC;
+__________________________________________________________
+SELECT                                                                          /* Sacar el código y el nombre de los clientes
+    cliente.cod_cli, cliente.nom                                                   que no tienen ninguna factura*/
+      FROM    cliente   LEFT  JOIN  factura ON client.cod_cli=factura.cod_cli
+      WHERE   factura.num_f   IS NULL
+      ORDER BY 1;
+__________________________________________________________
+SELECT                                                                            /* Sacar el código, descripción y total de unidades 
+    articulo.cod_a,                                                                  vendidas de todos los artículos
+    articulo.descrip,                                                                 incluso de aquellos que no se ha vendido nada */
+      SUM(COALESCE(line_fac.cantidad,0))
+      FROM articulo LEFT JOIN linea_factura ON articulo.cod_a=linea_factura.cod_a
+      GROUP BY articulo.cod_a, articulo.descrip
+      ORDER BY 1;
+________________________________________________________
+SELECT                                                                              /* Sacar el nombre de todos los pueblos
+    pueblo.cod_pueblo,                                                                 y el número de clientes en caso de que la tengan
+    pueblo.nombre,                                                                     Ordenar por número de clientes de forma descendente.*/
+        COUNT (cliente.*)
+    FROM pueblo LEFT JOIN cliente ON pueblo.cod_pob=cliente.cod_pob
+    GROUP BY pueblo.cod_pob, pueblo.nom
+    ORDER BY 3 DESC;
+________________________________________________________
+SELECT                                                                          /* Sacar el código y la descripción de las categorías
+    categoria.cod_cat,                                                             con el número de artículos de cada categoría
+    categoria.descripcion,                                                         y el número total de unidades vendidas
+      COUNT(DISTINCT articulo.cod_a),                                              de cada categoría, de aquellas categorías de las que tenemos 
+      SUM(cantidad)                                                                más de 15 artículos y ordenado por número de 
+      FROM categoria INNER JOIN articulo USING(cod_cat)                            artículos de forma descendente */
+      LEFT JOIN linea_fac ON articulo.cod_a=LINIA_FAC.cod_a
+      GROUP BY categoria.cod_cat, categoria.descripcion
+      HAVING                                                                      /* COMPLICADA */
+          COUNT(DISTINCT articulo.cod_a) > 15
+          ORDER BY 3 DESC;
+_________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+

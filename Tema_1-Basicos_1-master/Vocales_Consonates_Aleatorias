@@ -1,0 +1,21 @@
+public class Vocales_Consonates_Aleatorias
+
+    public static void main(String [] args)
+	  {
+		    char car = (char)(Math.random( ) * 26 + 'A');
+	
+		    String resultado = (car == 'A' || car == 'E' || car == 'I' || car == 'O' || car == 'U') ?
+		          "VOCAL" : "CONSONANTE";
+        System.out.println(car+" es "+resultado);
+        
+		    car = (char)(Math.random( ) * 26 + 'A');
+		    resultado = (car == 'A' || car == 'E' || car == 'I' || car == 'O' || car == 'U') ? "VOCAL"
+		          : "CONSONANTE";
+		    System.out.println(car+" es "+resultado);
+        
+		    car = (char)(Math.random( ) * 26 + 'A');
+		    resultado = (car == 'A' || car == 'E' || car == 'I' || car == 'O' || car == 'U') ? "VOCAL"
+		    : "CONSONANTE";
+		    System.out.println(car+" es "+resultado);
+	  }
+}

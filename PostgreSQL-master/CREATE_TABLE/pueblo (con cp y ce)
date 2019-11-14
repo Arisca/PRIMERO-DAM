@@ -1,0 +1,7 @@
+CREATE TABLE pueblo
+(
+    cod_pueblo      NUMERIC(5,0)    CONSTRAINT cp_pueblo  PRIMARY KEY,
+    nombre          VARCHAR(50),
+    cod_pro         NUMERIC(20)     CONSTRAINT ce_pueblo_pro  REFERENCES  provincia
+);
+

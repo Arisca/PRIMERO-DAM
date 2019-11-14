@@ -1,0 +1,17 @@
+// Ejercicio: Realiza un programa que muestre en pantalla los 50 primeros números pares //
+
+public class Pares
+{
+
+	public static void main(String[] args)
+  {
+		
+		System.out.println("Todos los números pares hasta el 50");
+
+		for (int n=1; n<=50; n++)
+			if (n%2 == 0)
+				System.out.print("  " + n + "  " );
+	}
+
+}
+

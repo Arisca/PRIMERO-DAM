@@ -1,0 +1,39 @@
+SELECT * FROM cliente
+  WHERE cod_pueblo = 12309;
+  
+_____________________________
+
+SELECT * FROM factura 
+  WHERE EXTRACT (month FROM data) = 3;
+  
+______________________________
+
+SELECT * FROM articulo
+  WHERE cod_cat = "Papaoliva" ad stock BETWEEN 2 AND 7;
+  
+______________________________
+
+ SELECT * FROM cliente
+  WHERE cp IS NULL;
+  
+_____________________________
+
+SELECT * FROM articulo
+  WHERE stock IS OT NULL AND stock_min IS NULL;
+  
+____________________________
+
+SELECT * FROM cliente
+  WHERE nombre LIKE "Cacahuete%";
+
+________________________________
+
+SELECT * FROM cliente
+  WHERE nombre LIKE "%Gusanito%";
+  
+_______________________________
+
+SELECT * FROM cliente
+  WHERE nombre NOT LIKE "%Caramelo", AD precio BETWEEN 2 AND 4 AND stock > stock_min;
+  
+  

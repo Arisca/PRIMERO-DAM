@@ -1,0 +1,9 @@
+CREATE TABLE articulo
+(
+    cod_a          VARCHAR(10),
+    descrip        VARCHAR(50),
+    precio         NUMERIC(6,2),
+    stock          NUMERIC(4,0),
+    stock_min      NUMERIC(4,0),
+    cod_cat        VARCHAR(15)
+);

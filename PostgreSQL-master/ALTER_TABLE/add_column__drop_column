@@ -1,0 +1,8 @@
+ALTER TABLE vendedor
+      ADD COLUMN        alias       VARCHAR(20)       UNIQUE      NOT NULL;
+ __________________________
+ 
+ ALTER TABLE vendedor
+      DROP COLUMN       alias;
+      
+      

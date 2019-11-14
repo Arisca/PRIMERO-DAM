@@ -1,0 +1,13 @@
+package Utilidades.mates;
+
+public class potenciar
+{
+  public int potencia (int base, int exp )
+  {
+    int resul =1;
+    for (int i=1; i<=exp; i++)
+    resul *=base;
+    return resul;
+   }
+ }
+ 

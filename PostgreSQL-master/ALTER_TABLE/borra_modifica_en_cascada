@@ -1,0 +1,4 @@
+ALTER TABLE linea_factura
+    ADD CONSTRAINT  ce_lin_fac   FOREIGN KEY  (num_f)   REFERENCES factura ON DELETE CASCADE,
+    ADD CONSTRAINT  ce_lin_art   FOREIGN KEY  (cod_a)   REFERENCES articulo;
+    
