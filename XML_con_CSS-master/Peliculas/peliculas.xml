@@ -1,0 +1,45 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="peliculas_css_1.css"?>
+<!DOCTYPE filmoteca SYSTEM "peliculas_dtd_1.dtd">
+
+<filmoteca>
+  <pelicula>
+    <cartel imagen="1"/>
+    <titulo>E.T.</titulo>
+    <estreno>1982</estreno>
+    <duracion>115 min</duracion>
+    <director>Steven Spielberg</director>
+    <reparto>
+      <interprete papel ="protagonista">Henry Thomas</interprete>
+      <interprete papel ="protagonista">Drew Barrymore</interprete>
+      <interprete papel ="secundario">Robert McNaughton</interprete>
+      <interprete>Dee Wallace</interprete>
+    </reparto>
+  </pelicula>
+  <pelicula>
+    <cartel imagen="2"/>
+    <titulo>Forest Gump</titulo>
+    <estreno>1994</estreno>
+    <duracion>141 min</duracion>
+    <director>Robert Zemeckis</director>
+    <reparto>
+      <interprete papel ="protagonista">Tom Hanks</interprete>
+      <interprete papel ="protagonista">Robin Wright Penn</interprete>
+      <interprete papel ="secundario">Gary Sinise</interprete>
+      <interprete>Mykelti Williamson</interprete>
+    </reparto>
+  </pelicula>
+  <pelicula>
+    <cartel imagen="3"/>
+    <titulo>La historia interminable</titulo>
+    <estreno>1984</estreno>
+    <duracion>95 min</duracion>
+    <director>Wolfgang Petersen</director>
+    <reparto>
+      <interprete papel ="protagonista">Barret Oliver</interprete>
+      <interprete papel ="protagonista">Noah Hathaway</interprete>
+      <interprete papel ="secundario">Tami Stronach</interprete>
+      <interprete>Patricia Hayes</interprete>
+    </reparto>
+  </pelicula>
+</filmoteca>

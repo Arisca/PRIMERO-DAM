@@ -1,0 +1,13 @@
+<!ELEMENT filmoteca (pelicula*)>
+  <!ELEMENT pelicula (cartel, titulo +, estreno, duracion, director, reparto)>
+    <!ELEMENT cartel SYSTEM "pages/1.jpg" NDATA jpg>
+    <!ELEMENT cartel SYSTEM "pages/2.jpg" NDATA jpg>
+    <!ELEMENT cartel SYSTEM "pages/3.jpg" NDATA jpg>
+    <!ELEMENT titulo #ID #REQUIRED>
+    <!ELEMENT estreno (#PCDATA)>
+    <!ELEMENT duracion (#PCDATA)>
+    <!ELEMENT director (#PCDATA)>
+    <!ELEMENT reparto (interpretes*)>
+      <!ATTLIST interprete protagonista (#PCDATA)>
+      <!ATTLIST interprete secundario (#PCDATA)>
+      <<!ATTLIST interprete (#PCDATA)>

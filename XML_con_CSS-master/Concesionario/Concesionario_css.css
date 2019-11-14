@@ -1,0 +1,330 @@
+Concesionario:before
+{
+  content: "Compra y venta de vehículos";
+  font-family: Arial;
+  color: Blue;
+  display: block;
+  background: url("pages/banner.jpg");
+  background-repeat: no-repeat;
+  width: 1240px;
+  height: 300px;
+  font-size: 40pt;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  text-align:center;
+}
+Concesionario
+{
+  display:block;
+  background-color: #DCDDD9;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+vehiculo
+{
+  display:table-row;
+  border:collapse;
+  background: white;
+  display: block;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+fotos[oferta="1a"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Juke1.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="1b"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Juke2.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="2a"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/BMW1.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="2b"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/BMW2.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="3a"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Renault1.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="3b"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Renault2.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="4a"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Mini1.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="4b"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Mini2.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="5a"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Citroen1.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="5b"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Citroen2.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="6a"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Audi1.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+fotos[oferta="6b"]
+{
+  display: table-row;
+  border: double;
+  background: url("Pages/Audi2.jpg");
+  background-repeat: no-repeat;
+  width: 315px;
+  height: 230px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+marca
+{
+  font-family: Verdana;
+  font-size: 30pt;
+  font-weight: bold;
+}
+modelo
+{
+  font-family: Verdana;
+  font-size: 17pt;
+  margin-top: 6px;
+  font-weight: bold;
+}
+motor:before
+{
+  content: "Motor : ";
+  font-family: "Malgun Gothic";
+  font-size: 15pt;
+  font-style: normal;
+  font-style: oblique;
+  padding-right: 7%;
+}
+motor
+{
+  display:block;
+  text-align: left;
+  margin-left: 100px;
+  padding: 5px;
+}
+matricula:before
+{
+  content: "Matricula : ";
+  font-family: "Malgun Gothic";
+  font-size: 15pt;
+  font-style: normal;
+  font-style: oblique;
+  padding-right: 4%;
+}
+matricula
+{
+  display:block;
+  margin-left: 100px;
+  padding: 5px;
+}
+kilometros:before
+{
+  content: "Kilómetros : ";
+  font-family: "Malgun Gothic";
+  font-size: 15pt;
+  font-style: normal;
+  font-style: oblique;
+  padding-right: 3%;
+}
+kilometros
+{
+  display:block;
+  margin-left: 100px;
+  padding: 5px;
+}
+extras:before
+{
+  content: "Extras : ";
+  font-family: "Malgun Gothic";
+  font-size: 15pt;
+  font-style: normal;
+  font-style: oblique;
+}
+extras
+{
+  display:block;
+  margin-left: 100px;
+  padding: 5px;
+}
+extras [destacado="1"]
+{
+  padding-left: 7.5%;
+}
+extras [destacado="2"]
+{
+  display:block;
+  padding-left: 14.5%;
+}
+extras [destacado="3"]
+{
+  display:block;
+  padding-left: 14.5%;
+}
+precio_original:before
+{
+  content: "Antes";
+  display: block;
+  text-align:center;
+  font-family: "Malgun Gothic";
+  font-size: 15pt;
+  font-style: normal;
+  font-style: oblique;
+  text-decoration: none;
+}
+precio_original
+{
+  font-family: "Comic Sans MS";
+  font-size: 20pt;
+  display:block;
+  text-align:center;
+  text-decoration:line-through;
+}
+precio_oferta:before
+{
+
+  content: "Ahora";
+  display: block;
+  text-align:center;
+  font-family: "Malgun Gothic";
+  font-size: 15pt;
+  font-style: normal;
+  font-style: oblique;
+}
+precio_oferta
+{
+  display:table-row;
+  border:double;
+  border-color: red;
+  font-family: "Comic Sans MS";
+  font-size: 30pt;
+  color:red;
+  display:block;
+  text-align:center;
+}

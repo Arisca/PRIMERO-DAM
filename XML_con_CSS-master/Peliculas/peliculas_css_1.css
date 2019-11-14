@@ -1,0 +1,165 @@
+﻿filmoteca
+{
+  background-color:#DED8D2 ;
+  font-size: 14pt;
+  margin-top: 4em;
+  margin-left: 4em;
+  text-align: center;
+}
+titulo:before
+{
+  margin-right: 6em;
+  content: "Título de la película: ";
+  width: 100%;
+  font-size: 14pt;
+  text-decoration:underline;
+  font-weight: normal;
+  text-align: center;
+}
+titulo
+{
+  background-color: #D6B08A;
+  display: table-row;
+  border: double;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20pt;
+}
+cartel[imagen="1"]
+{
+  display: table-row;
+  border: double;
+  background: url("pages/1.jpg");
+  background-repeat: no-repeat;
+  width: 245px;
+  height: 225px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+cartel[imagen="2"]
+{
+  display: table-row;
+  border: double;
+  background: url("pages/2.jpg");
+  background-repeat: no-repeat;
+  width: 245px;
+  height: 225px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+cartel[imagen="3"]
+{
+  display: table-row;
+  border: double;
+  background: url("pages/3.jpg");
+  background-repeat: no-repeat;
+  width: 245px;
+  height: 225px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float:right;
+  background-size: auto;
+}
+
+estreno::before
+{
+  display:block;
+  content: "Fecha de estreno: ";
+  text-decoration:underline;
+  text-align: left;
+}
+estreno
+{
+  text-align: center;
+}
+duracion:before
+{
+  content: "Duración: ";
+  text-decoration:underline;
+  display: block;
+  text-align: left;
+}
+duracion
+{
+  text-align: center;
+  display: block;
+}
+director:before
+{
+  content: "Director: ";
+  text-decoration:underline;
+  display: block;
+  text-align: left;
+  font-style: normal;
+}
+director
+{
+  text-align: center;
+  display: block;
+  font-style: oblique;
+}
+reparto:before
+{
+  content: "Reparto: ";
+  text-decoration:underline;
+  display: block;
+  text-align: left;
+  font-style: normal;
+}
+reparto
+{
+  text-align: center;
+  display: block;
+  margin-bottom: 5em;
+}
+
+interprete
+{
+  text-align:justify;
+  margin-left: 25em;
+  display: block;
+  font-style: oblique;
+}
+interprete[papel ="protagonista"]:before
+{
+  content: " * ";
+  font-style:normal;
+}
+interprete[papel ="protagonista"]:after
+{
+  content: " como protagonista";
+  font-style:normal;
+  font-size: small;
+}
+interprete[papel ="secundario"]:before
+{
+  content: " * ";
+  font-style:normal;
+}
+interprete[papel ="secundario"]:after
+{
+  content: " como secundario";
+  font-style:normal;
+  font-size: small;
+}
+interprete:before
+{
+  content: " * ";
+  font-style:normal;
+}
+interprete:after
+{
+  content: " como papel especial";
+  font-style:normal;
+  font-size: small;
+}

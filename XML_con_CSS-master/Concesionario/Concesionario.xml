@@ -1,0 +1,102 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="Concesionario_css.css"?>
+<!DOCTYPE Concesionario SYSTEM "Concesionario.dtd">
+
+<Concesionario>
+    <vehiculo>
+      <fotos oferta="1a"/>
+      <fotos oferta="1b"/>
+      <marca>Nissan</marca>
+      <modelo>Juke</modelo>
+      <motor>1.2 DIG-T 115CV - Gasolina -</motor>
+      <matricula>7311JLR</matricula>
+      <kilometros>84291 km</kilometros>
+      <extras>
+        <equipamiento destacado="1"> De un único propietario</equipamiento>
+        <equipamiento destacado="2"> Bluetooth </equipamiento>
+        <equipamiento destacado="3"> Sensor de presión de neumáticos</equipamiento>
+      </extras>
+      <precio_original>12.520 €</precio_original>
+      <precio_oferta>11.400 €</precio_oferta>
+  </vehiculo>
+  <vehiculo>
+    <fotos oferta="2a"/>
+    <fotos oferta="2b"/>
+    <marca>BMW</marca>
+    <modelo>Serie 3 318d</modelo>
+    <motor>Gran Turismo 150CV - Diesel -</motor>
+    <matricula>5549JJW</matricula>
+    <kilometros>131439  km</kilometros>
+    <extras>
+      <equipamiento destacado="1"> Llantas de aleación 18''</equipamiento>
+      <equipamiento destacado="2"> Navegador abordo</equipamiento>
+      <equipamiento destacado="3"> Faros bixenón</equipamiento>
+    </extras>
+    <precio_original>22.140 €</precio_original>
+    <precio_oferta>19.252 €</precio_oferta>
+  </vehiculo>
+  <vehiculo>
+    <fotos oferta="3a"/>
+    <fotos oferta="3b"/>
+    <marca>Renault</marca>
+    <modelo>Megane</modelo>
+    <motor>1.5 dci 85 Tomtom Edition 85 CV - Diesel -</motor>
+    <matricula> Preparado para rematricular </matricula>
+    <kilometros>102307  km</kilometros>
+    <extras>
+      <equipamiento destacado="1"> Del año 2011</equipamiento>
+      <equipamiento destacado="2"> Sistema Isofix</equipamiento>
+      <equipamiento destacado="3"> de un único propietario</equipamiento>
+    </extras>
+    <precio_original>6.540 €</precio_original>
+    <precio_oferta>5.900 €</precio_oferta>
+  </vehiculo>
+  <vehiculo>
+    <fotos oferta="4a"/>
+    <fotos oferta="4b"/>
+    <marca>Mini</marca>
+    <modelo>Countryman Cooper</modelo>
+    <motor>122CV - Gasolina -</motor>
+    <matricula>5153JFC</matricula>
+    <kilometros>14544 km</kilometros>
+    <extras>
+      <equipamiento destacado="1"> Con cambio automático</equipamiento>
+      <equipamiento destacado="2"> Volante multifunción </equipamiento>
+      <equipamiento destacado="3"> Start/Stop automático</equipamiento>
+    </extras>
+    <precio_original>19.180 €</precio_original>
+    <precio_oferta>16.678 €</precio_oferta>
+  </vehiculo>
+  <vehiculo>
+    <fotos oferta="5a"/>
+    <fotos oferta="5b"/>
+    <marca>Citröen</marca>
+    <modelo>c3 Furio</modelo>
+    <motor>1.4 HDI 70CV - Diesel -</motor>
+    <matricula>4833GMB</matricula>
+    <kilometros>151299 km</kilometros>
+    <extras>
+      <equipamiento destacado="1"> de un único propietario</equipamiento>
+      <equipamiento destacado="2"> Sistema Isofix </equipamiento>
+      <equipamiento destacado="3"> Navegador a bordo</equipamiento>
+    </extras>
+    <precio_original>4.200 €</precio_original>
+    <precio_oferta>3.900 €</precio_oferta>
+  </vehiculo>
+  <vehiculo>
+    <fotos oferta="6a"/>
+    <fotos oferta="6b"/>
+    <marca>Audi</marca>
+    <modelo>A5 Coupe</modelo>
+    <motor>2.0 TFSI Multitronic 180CV - Gasolina -</motor>
+    <matricula>7730GLF</matricula>
+    <kilometros>89652 km</kilometros>
+    <extras>
+      <equipamiento destacado="1"> de un único propietario</equipamiento>
+      <equipamiento destacado="2"> Cambio automático</equipamiento>
+      <equipamiento destacado="3"> Start/Stop automático</equipamiento>
+    </extras>
+    <precio_original>16.400 €</precio_original>
+    <precio_oferta>15.700 €</precio_oferta>
+  </vehiculo>
+</Concesionario>
